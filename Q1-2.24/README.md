@@ -1,1 +1,1 @@
-# Tracing System Calls for a C Program
+# 2.24: Tracing System Calls for a C Program

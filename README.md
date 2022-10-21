@@ -1,16 +1,31 @@
 # CS252-OS-Assignment
 
-## Questions:
+## What are System Calls?
+System Calls are the programming interface to the services provided by the Operating System.
 
-### [Question 1: Chapter 2 - 2.24]
+Generally being written in C or C++ most of the System Calls are accessed by programs via a high level Application Program Interface (API) rather than directy using the system call.
 
-In Section 2.3, we described a program that copies the contents of one file to a destination file. This program works by first prompting the user for the name of the source and destination files. Write this program using either the POSIX or Windows API. Be sure to include all necessary error checking, including ensuring that the source file exists.
+>In fact even *printf()* in C Language is an API to call *write()* in UNIX systems or *WriteFile()* in Windows
 
-Once you have correctly designed and tested the program, if you used a system that supports it, run the program using a utility that traces sys- tem calls. Linux systems provide the strace utility, and macOS systems use the dtruss command. (The dtruss command, which actually is a front end to dtrace, requires admin privileges, so it must be run using sudo.) These tools can be used as follows (assume that the name of the executable file is FileCopy:
+### System Call Implementation:
 
-Linux:  strace ./FileCopy
-macOS:  sudo dtruss ./FileCopy
-              
-Since Windows systems do not provide such a tool, you will have to trace through the Windows version of this program using a debugger.
+Typically a number is associated with each system call and **System Call Interface** maintains a table indexed according to these numbers.
+
+The System Call Interface invokes the system call intended in the Kernel(the part of the Operating System that always runs) and returns status of the system of system call and any return values.
+
+So the System Call Interface is defined in such a way that the user need nmot know how the system call is implemented hence just needing to obey the *API* and understand what the OS would do as a result call.
+
+Most of the details of OS interface hidden from the programmer by API and are managed by run time support library (i.e. set of functions built into libraries including with compiler)
+
+>A run time support library is set of functions built into libraries included with compiler realizing the many functions by accessing the Operating System
+
+
+
+
+### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+
+### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+
+
 
 

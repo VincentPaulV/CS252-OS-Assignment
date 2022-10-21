@@ -27,6 +27,11 @@ Most of the details of OS interface hidden from the programmer by API and are ma
 
 ## Motivation for [2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
+Here we have a program which copies the content of one file to a destination file.
+Then we use a utility that traces system calls.
+>In this case we use *strace*
+
+As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment/edit/main/README.md#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are .
 
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)

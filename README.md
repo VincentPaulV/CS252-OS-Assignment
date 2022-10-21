@@ -1,5 +1,7 @@
 # CS252-OS-Assignment
 
+### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+
 ## What are System Calls?
 System Calls are the programming interface to the services provided by the Operating System.
 
@@ -15,14 +17,17 @@ The System Call Interface invokes the system call intended in the Kernel(the par
 
 So the System Call Interface is defined in such a way that the user need nmot know how the system call is implemented hence just needing to obey the *API* and understand what the OS would do as a result call.
 
-Most of the details of OS interface hidden from the programmer by API and are managed by run time support library (i.e. set of functions built into libraries including with compiler)
+Most of the details of OS interface hidden from the programmer by API and are managed by run time support library.
 
->A run time support library is set of functions built into libraries included with compiler realizing the many functions by accessing the Operating System
+>A run time support library is set of functions built into libraries included with compiler realizing the many functions by accessing the Operating System which is compiler dependent.
 
-![API-System Call-OS Relationship](/assets/images/api_os_relation.png)
+### API - System Call - OS Relationship
+
+![API-System Call-OS Relationship](/images/api_os_relation.png)
+
+## Motivation for [2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
 
-### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 

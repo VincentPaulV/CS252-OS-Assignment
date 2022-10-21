@@ -31,7 +31,9 @@ Here we have a program which copies the content of one file to a destination fil
 Then we use a utility that traces system calls.
 >In this case we use *strace*
 
-As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are .
+As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are.
+
+
 
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)

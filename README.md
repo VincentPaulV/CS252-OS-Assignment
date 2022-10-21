@@ -19,7 +19,7 @@ Most of the details of OS interface hidden from the programmer by API and are ma
 
 >A run time support library is set of functions built into libraries included with compiler realizing the many functions by accessing the Operating System
 
-
+![API-System Call-OS Relationship](/assets/images/api_os_relation.png)
 
 
 ### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)

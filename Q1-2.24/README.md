@@ -49,6 +49,13 @@ Be sure to include all necessary error checking, including ensuring that the sou
 ```
 ssize_t read(int fd, void *buf, size_t count);
 ```
-
+Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+read(0, "source.txt\n", 1024)           = 11
+```
+Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+read(0, "source.txt\n", 1024)           = 11
+```
 
 2. **write():** 

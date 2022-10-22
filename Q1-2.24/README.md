@@ -146,3 +146,39 @@ In the above close() statement:
 > 3 was the file descriptor of "/etc/ld.so.cache" , "/lib/x86_64-linux-gnu/libc.so.6" , "source.txt" and 4 was the file descriptor of "destination.txt".
 Refer [4. openat()](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24#4-openat)
 
+### 6. **fstat():** 
+```
+int fstat(int fildes, struct stat *buf);
+```
+Line 6 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(3, {st_mode=S_IFREG|0644, st_size=32876, ...}) = 0
+```
+Line 14 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(3, {st_mode=S_IFREG|0755, st_size=2029592, ...}) = 0
+```
+Line 30 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+```
+Line 34 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+```
+Line 40 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(3, {st_mode=S_IFREG|0777, st_size=98293, ...}) = 0
+```
+Line 42 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+fstat(4, {st_mode=S_IFREG|0777, st_size=0, ...}) = 0
+```
+
+In the above close() statement:
+* close() returns 0 on success and -1 on error
+* int fd is the file descriptor which is to be closed.
+> 3 was the file descriptor of "/etc/ld.so.cache" , "/lib/x86_64-linux-gnu/libc.so.6" , "source.txt" and 4 was the file descriptor of "destination.txt".
+Refer [4. openat()](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24#4-openat)
+
+

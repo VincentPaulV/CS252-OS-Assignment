@@ -60,6 +60,7 @@ In the above 2 read() statements:
 * The file descriptor(int fd) is mentioned
 * The text being read is in buffer(void *buf)
 * The count (size_t - unsigned integer in POSIX) is 512 or 1024 bytes read.
+* The number of bytes read is returned (0 indicates EOF), and the file position is advanced by this number.
 
 ### 2. **write():** 
 ```
@@ -77,6 +78,7 @@ In the above 2 write() statements:
 * The file descriptor(int fd) is mentioned
 * The text being wriiten is in buffer(void *buf)
 * The count (size_t - unsigned integer in POSIX) is **upto** 512 bytes read (40 in the case of Line 33).
+* On success, the number of bytes written is returned. On error -1 is returned, and errno is set to indicate the error.
 
 ### 3. **execve():** 
 ```
@@ -91,6 +93,7 @@ In the above execve() statement:
 * The path name is the object file to be executed
 * *argv* is an array of pointers to strings passed to the new program as its command-line arguments (in the above case is "output.o").
 * *envp* is an array of pointers to strings, conventionally of the form key=value, which are passed as the environment of the new program.The envp array must be terminated by a NULL pointer(in our case is a hexadecimal address).
+* On success, execve() returns 0, on error -1 is returned,and errno is set to indicate the error.
 
 ### 4. **openat():** 
 ```
@@ -119,7 +122,7 @@ In the above 4 openat() statements:
 * The pathnames are given as arguments.
 * Flags are O_RDONLY|O_CLOEXEC, O_RDONLY, O_WRONLY|O_CREAT|O_TRUNC
 * mode_t mode is given as 0666
-* Returned values are used as the **file descriptor** arguments for read() and write() statements.
+* Returned values are used as the **file descriptor** arguments for all the respective system calls.
 
 ### 5. **close():** 
 ```
@@ -374,3 +377,8 @@ In the above lseek() statement:
 
   >Here we are getting error as ESPIPE
   i.e. fd is associated with a pipe, socket, or FIFO.
+
+## References:
+### System Calls:
+* https://man7.org/linux/man-pages/man2/
+  

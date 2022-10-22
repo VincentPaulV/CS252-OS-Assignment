@@ -14,3 +14,8 @@ These tools can be used as follows (assume that the name of the executable file 
 >macOS:  sudo dtruss ./FileCopy
               
 Since Windows systems do not provide such a tool, you will have to trace through the Windows version of this program using a debugger.
+
+## Approach:
+
+1. The program that copies the contents the of one file to a destination file is wiritten in **C Language**
+2. The file opened for reading is named [*source.txt*](

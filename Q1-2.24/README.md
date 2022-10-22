@@ -17,10 +17,10 @@ Since Windows systems do not provide such a tool, you will have to trace through
 
 ## Approach:
 ### Description of Files: 
-1. The program that copies the contents the of one file to a destination file is written in **C Language** and is named as [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
+1. The program that copies the contents of one file to a destination file is written in **C Language** and is named as [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 2. The file whose content is copied is named [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt)
 3. The compiled C Program gives us an object file which has been named as [**output.o**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output.o)
-3. Ubuntu(WSL) has been used for executing the strace commands in the terminal.
+4. Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 > WSL is Windows Subsystem for Linux which is a layer which is used for natively running Linux commands on Windows machines.
 
 

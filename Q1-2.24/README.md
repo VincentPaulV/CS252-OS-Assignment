@@ -41,7 +41,7 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 This program works by first prompting the user for the name of the source and destination files.
 
 
-## List of system calls made
+## List of System Calls made:
 ### 1. **read():** 
 ```
 ssize_t read(int fd, void *buf, size_t count);

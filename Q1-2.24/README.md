@@ -118,3 +118,31 @@ In the above openat() statement:
 * Flags are O_RDONLY|O_CLOEXEC, O_RDONLY, O_WRONLY|O_CREAT|O_TRUNC
 * mode_t mode is given as 0666
 * Returned values are used as the **file descriptor** arguments for read() and write() statements.
+
+### 5. **close():** 
+```
+int close(int fd);
+```
+Line 8 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+close(3)                                = 0
+```
+Line 24 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+close(3)                                = 0
+```
+Line 427 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+close(3)                                = 0
+```
+Line 429 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+close(4)                                = 0
+```
+
+In the above close() statement:
+* close() returns 0 on success and -1 on error
+* int fd is the file descriptor which is to be closed.
+> 3 was the file descriptor of "/etc/ld.so.cache" , "/lib/x86_64-linux-gnu/libc.so.6" , "source.txt" and 4 was the file descriptor of "destination.txt".
+Refer [4. openat()](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24#4-openat)
+

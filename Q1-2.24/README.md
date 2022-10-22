@@ -33,9 +33,11 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 **Command:** 
 >*strace -osyscall_log ./output.o*
 
-
+2. [**syscall_log_initial**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_initial) contains all the system calls made by the program before the [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) has been entered for reading.
+3. [**syscall_log_read**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_read) contains all the system calls made by the program after [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) has been input and [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt) has to be entered
 
 >This program works by first prompting the user for the name of the source and destination files. 
 Write this program using either the POSIX or Windows API. 
 Be sure to include all necessary error checking, including ensuring that the source
+
 

@@ -18,4 +18,4 @@ Since Windows systems do not provide such a tool, you will have to trace through
 ## Approach:
 
 1. The program that copies the contents the of one file to a destination file is wiritten in **C Language**
-2. The file opened for reading is named [*source.txt*](
+2. The file whose content is copied is named [*source.txt*](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [*destination.txt*](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt)

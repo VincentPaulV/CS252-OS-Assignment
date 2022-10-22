@@ -38,9 +38,65 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
   
     **Command:** 
     >*strace -c -osyscall_log ./output.o*
+    
+### The C Program: [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 
-### [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
-This program works by first prompting the user for the name of the source and destination files.
+Prompting the user for the name of the source file:
+```
+FILE *fptr1, *fptr2;
+char filename[100], c;
+printf("Enter the filename to open for reading \n");
+scanf("%s", filename);
+```
+
+Here we define 2 pointers to FILE type and they will be assigned the address of a file descriptor, that is, an area of memory that will be associated with an input or output stream.
+
+Opening Source File for Reading
+Including all necessary error checking, ensuring that the source file exists:
+```
+// Open one file for reading
+fptr1 = fopen(filename, "r");
+if (fptr1 == NULL)
+{
+  printf("Cannot open file %s \n", filename);
+  exit(0);
+}
+```
+Prompting the user for the name of the destination file:
+```
+printf("Enter the filename to open for writing \n");
+scanf("%s", filename);
+```
+
+Opening Destination File for Writing
+Including all necessary error checking, ensuring that the destination file exists:
+```
+// Open another file for writing
+fptr2 = fopen(filename, "w");
+if (fptr2 == NULL)
+{
+  printf("Cannot open file %s \n", filename);
+  exit(0);
+}
+```
+
+Reading Content from Source File and Pasting it into Destination file.
+```
+// Read contents from file
+c = fgetc(fptr1);
+while (c != EOF)
+{
+  fputc(c, fptr2);
+  c = fgetc(fptr1);
+}
+```
+Closing the file pointers:
+```
+printf("\nContents copied to %s", filename);
+  
+    fclose(fptr1);
+    fclose(fptr2);
+```
 
 
 ## List of System Calls made:

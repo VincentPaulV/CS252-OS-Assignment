@@ -235,7 +235,6 @@ In the above 7 mmap() statements:
 referred to by the file descriptor fd.  
   > Offset must be a multiple of the page size
 
-
 ### 8. **pread64():** 
 ```
 ssize_t pread(int fd, void *buf, size_t count, off_t offset);
@@ -258,17 +257,24 @@ pread64(3,"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\30x\346\264ur\f|Q\226\236i\253-'o"...,
 ```
 
 In the above 6 pread64() statements:
-* The fstat() function shall obtain information about an open file associated with the file descriptor fildes, and shall write it to the area pointed to by buf.
-* **int filedes** contains the file descriptor
-* struct stat *buf is a buffer pointing to a struct stat:
+* The pread64() function pread() reads up to *int count* bytes from file descriptor *int fd* at *off_t offset* (from the start of the file) into the buffer starting at *buf*. The file offset is not changed.
 
-  * If *fildes* references a shared memory object:
-    
-    The implementation
-       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
+* pread64() returns the number of bytes read and returns 0 at EOF.
 
-  * If *fildes* references a typed memory object:
-    
-    The implementation
-       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
-* fstat() returns 0 on success and -1 on error
+### 9. **brk():** 
+```
+int brk(void *addr);
+```
+Line 2 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+brk(NULL)  
+```
+Line 31 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+brk(NULL)                               = 0x55e4f9ea9000
+```
+
+In the above 6 pread64() statements:
+* The pread64() function pread() reads up to *int count* bytes from file descriptor *int fd* at *off_t offset* (from the start of the file) into the buffer starting at *buf*. The file offset is not changed.
+
+* pread64() returns the number of bytes read and returns 0 at EOF.

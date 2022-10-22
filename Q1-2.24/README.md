@@ -24,18 +24,20 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 2. The file whose content is copied is named [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt).
 3. The compiled C Program gives us an object file which has been named as [**output.o**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output.o).
 
-**Command:** 
->*gcc -o output.o copy_paste_content.c*
+    **Command:** 
+    >*gcc -o output.o copy_paste_content.c*
 
 ### Description of Logs:
 1. [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log) contains all the system calls made by the program during its total runtime.
-  **Command:** 
-  >*strace -osyscall_log ./output.o*
+  
+    **Command:** 
+   >*strace -osyscall_log ./output.o*
 2. [**syscall_log_initial**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_initial) contains all the system calls made by the program before the [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) has been entered for reading.
 3. [**syscall_log_read**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_read) contains all the system calls made by the program after [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) has been input and [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt) has to be entered
 4. [**syscall_log_count**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_count) is a systematic log file which contains the time distribution of all system calls made, giving better readability.
-  **Command:** 
-  >*strace -c -osyscall_log ./output.o*
+  
+    **Command:** 
+    >*strace -c -osyscall_log ./output.o*
 
 ### [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 This program works by first prompting the user for the name of the source and destination files.
@@ -112,7 +114,7 @@ Line 39 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 openat(AT_FDCWD, "destination.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4
 ```
 
-In the above openat() statement:
+In the above 4 openat() statements:
 * If pathname is relative and dirfd is the special value AT_FDCWD, then pathname is interpreted relative to the current working directory of the calling process
 * The pathnames are given as arguments.
 * Flags are O_RDONLY|O_CLOEXEC, O_RDONLY, O_WRONLY|O_CREAT|O_TRUNC
@@ -140,7 +142,7 @@ Line 429 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignmen
 close(4)                                = 0
 ```
 
-In the above close() statement:
+In the above 4 close() statements:
 * close() returns 0 on success and -1 on error
 * int fd is the file descriptor which is to be closed.
 > 3 was the file descriptor of "/etc/ld.so.cache" , "/lib/x86_64-linux-gnu/libc.so.6" , "source.txt" and 4 was the file descriptor of "destination.txt".
@@ -175,10 +177,98 @@ Line 42 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 fstat(4, {st_mode=S_IFREG|0777, st_size=0, ...}) = 0
 ```
 
-In the above close() statement:
-* close() returns 0 on success and -1 on error
-* int fd is the file descriptor which is to be closed.
-> 3 was the file descriptor of "/etc/ld.so.cache" , "/lib/x86_64-linux-gnu/libc.so.6" , "source.txt" and 4 was the file descriptor of "destination.txt".
-Refer [4. openat()](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24#4-openat)
+In the above 6 pread64() statements:
+* The fstat() function shall obtain information about an open file associated with the file descriptor fildes, and shall write it to the area pointed to by buf.
+* **int filedes** contains the file descriptor
+* struct stat *buf is a buffer pointing to a struct stat:
+
+  * If *fildes* references a shared memory object:
+    
+    The implementation
+       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
+
+  * If *fildes* references a typed memory object:
+    
+    The implementation
+       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
+* fstat() returns 0 on success and -1 on error
+      
+### 7. **mmap():** 
+```
+void *mmap(void *addr, size_t length, int prot, int flags,int fd, off_t offset);
+```
+Line 7 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+mmap(NULL, 32876, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa8cb3aa000
+```
+Line 15 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8cb3a8000
+```
+Lines 19-23 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+mmap(NULL, 2037344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa8cb1b6000
+
+mmap(0x7fa8cb1d8000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7fa8cb1d8000
+
+mmap(0x7fa8cb350000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19a000) = 0x7fa8cb350000
+
+mmap(0x7fa8cb39e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7fa8cb39e000
+
+mmap(0x7fa8cb3a4000, 13920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa8cb3a4000
+```
+
+In the above 7 mmap() statements:
+* void *addr contains the pointer to the starting address for the new mapping.
+  * If addr is NULL:
+    * Kernel chooses the address at which to create the mapping. This is the most portable method of creating a new mapping
+  * If addr is not NULL:
+    * Kernel takes it as a hint about where to place the mapping
+  
+* size_t length argument specifies the length of the mapping
+* int prot is  the desired memory protection of the mapping which are PROT_READ, PROT_WRITE, PROT_EXEC, PROT_NONE or a bitwise combination of them.
+* int flags is the argument determines whether updates to the mapping are visible to other processes mapping the same region, and whether updates are carried through to the underlying file.
+* Flags can be be of many types out of which a few are MAP_PRIVATE, MAP_FIXED, MAP_ANONYMOUS, MAP_DENYWRITE etc.
+* int fd is the file descriptor
+  >3 in the case of the reading of the "source.txt" file
+* The contents of a file mapping, are initialized using length bytes starting at offset offset in the file (or other object)
+referred to by the file descriptor fd.  
+  > Offset must be a multiple of the page size
 
 
+### 8. **pread64():** 
+```
+ssize_t pread(int fd, void *buf, size_t count, off_t offset);
+```
+Lines 11-13 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+pread64(3,"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+
+pread64(3,"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+
+pread64(3,"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\30x\346\264ur\f|Q\226\236i\253-'o"..., 68, 880) = 68
+```
+Lines 16-18 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+pread64(3,"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+
+pread64(3,"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+
+pread64(3,"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\30x\346\264ur\f|Q\226\236i\253-'o"..., 68, 880) = 68
+```
+
+In the above 6 pread64() statements:
+* The fstat() function shall obtain information about an open file associated with the file descriptor fildes, and shall write it to the area pointed to by buf.
+* **int filedes** contains the file descriptor
+* struct stat *buf is a buffer pointing to a struct stat:
+
+  * If *fildes* references a shared memory object:
+    
+    The implementation
+       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
+
+  * If *fildes* references a typed memory object:
+    
+    The implementation
+       shall update in the stat structure pointed to by the buf argument the st_uid, st_gid, st_size, and st_mode fields.
+* fstat() returns 0 on success and -1 on error

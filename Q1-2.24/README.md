@@ -234,6 +234,7 @@ In the above 7 mmap() statements:
 * The contents of a file mapping, are initialized using length bytes starting at offset offset in the file (or other object)
 referred to by the file descriptor fd.  
   > Offset must be a multiple of the page size
+* Returns a pointer to the mapped area.  On error, the value MAP_FAILED (that is, (void *) -1) is returned, and errno is set to indicate the error.
 
 ### 8. **pread64():** 
 ```
@@ -314,6 +315,52 @@ Line 25 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 ```
 arch_prctl(ARCH_SET_FS, 0x7fa8cb3a9540) = 0
 ```
-In the above 3 mprotect() statements:
-* mprotect() changes the access protections for the calling process's memory pages containing any part of the address range in the interval [addr, addr+len-1]
-* *int prot* is the desired memory protection needed as discussed in [**7.mmap()**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/README.md#7-mmap)
+In the above 2 arch_prctl() statements:
+*  arch_prctl() sets architecture-specific process or thread state.
+   *int code* selects a subfunction and passes argument *addr* to it.
+* addr is interpreted as either an unsigned long for the "set" operations, or as an unsigned long *, for the "get" operations.
+
+> Line 3 gives us an error with error code EINVAL which indicates that code is not a valid subcommand i.e. ARCH_???
+
+> Line 25 uses ARCH_SET_FS as the code, hence "setting" the 64-bit base for the FS register to address 0x7fa8cb3a9540.
+
+### 12. **munmap():** 
+```
+int munmap(void *addr, size_t length);
+```
+Line 29 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+munmap(0x7fa8cb3aa000, 32876)           = 0
+```
+In the above munmap() statements:
+* The munmap() system call deletes the mappings for the specified address range, and causes further references to addresses within the range to generate invalid memory references.
+  >Here we are unmapping 0x7fa8cb3aa000, 32876 which was mapped in Line 7
+  ```
+  mmap(NULL, 32876, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa8cb3aa000
+  ```
+
+* The region is also automatically unmapped when the process is terminated.
+
+
+  >Closing the file descriptor does not unmap the region.
+
+### 13. **access():** 
+```
+int munmap(void *addr, size_t length);
+```
+Line 29 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+munmap(0x7fa8cb3aa000, 32876)           = 0
+```
+In the above munmap() statements:
+* The munmap() system call deletes the mappings for the specified address range, and causes further references to addresses within the range to generate invalid memory references.
+  >Here we are unmapping 0x7fa8cb3aa000, 32876 which was mapped in Line 7
+  ```
+  mmap(NULL, 32876, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa8cb3aa000
+  ```
+
+* The region is also automatically unmapped when the process is terminated.
+
+
+  >Closing the file descriptor does not unmap the region.
+

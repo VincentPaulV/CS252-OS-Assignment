@@ -45,9 +45,10 @@ This program works by first prompting the user for the name of the source and de
 Be sure to include all necessary error checking, including ensuring that the source
 
 ### List of system calls made
-1. **read:** 
+1. **read():** 
 ```
 ssize_t read(int fd, void *buf, size_t count);
 ```
 
-2. **write:** 
+
+2. **write():** 

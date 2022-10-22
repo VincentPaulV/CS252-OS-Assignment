@@ -1,6 +1,6 @@
 # CS252-OS-Assignment
 
-### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
 
 ## What are System Calls?
 System Calls are the programming interface to the services provided by the Operating System.

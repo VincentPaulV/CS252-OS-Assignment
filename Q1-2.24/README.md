@@ -267,14 +267,53 @@ int brk(void *addr);
 ```
 Line 2 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
-brk(NULL)  
+brk(NULL)                               = 0x55e4f9ea9000
 ```
 Line 31 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
 brk(NULL)                               = 0x55e4f9ea9000
 ```
+Line 32 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+brk(0x55e4f9eca000)                     = 0x55e4f9eca000
+```
+In the above 3 brk() statements:
+* brk() sets the end of the data segment to the value specified by void *addr, when that value is reasonable, the system has enough memory, and the process does not exceed its maximum data size.
+* 0x55e4f9ea9000 is the address in our case.
 
-In the above 6 pread64() statements:
-* The pread64() function pread() reads up to *int count* bytes from file descriptor *int fd* at *off_t offset* (from the start of the file) into the buffer starting at *buf*. The file offset is not changed.
+### 10. **mprotect():** 
+```
+int mprotect(void *addr, size_t len, int prot);
+```
+Lines 26-28 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+mprotect(0x7fa8cb39e000, 16384, PROT_READ) = 0
+mprotect(0x55e4f99cf000, 4096, PROT_READ) = 0
+mprotect(0x7fa8cb3e0000, 4096, PROT_READ) = 0
+```
+In the above 3 mprotect() statements:
+* mprotect() changes the access protections for the calling process's memory pages containing any part of the address range in the interval [addr, addr+len-1]
+* *int prot* is the desired memory protection needed as discussed in [**mmap()**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/README.md#7-mmap)
+* Returns 0 on succesful execution and -1 on errors.
 
-* pread64() returns the number of bytes read and returns 0 at EOF.
+
+### 11. **arch_prctl():** 
+```
+#include <asm/prctl.h> //Definition of ARCH_* constants
+#include <sys/syscall.h> //Definition of SYS_* constants
+#include <unistd.h>
+
+int syscall(SYS_arch_prctl, int code, unsigned long addr);
+int syscall(SYS_arch_prctl, int code, unsigned long *addr);
+```
+Line 3 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe0279a1b0) = -1 EINVAL (Invalid argument)
+```
+Line 25 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+arch_prctl(ARCH_SET_FS, 0x7fa8cb3a9540) = 0
+```
+In the above 3 mprotect() statements:
+* mprotect() changes the access protections for the calling process's memory pages containing any part of the address range in the interval [addr, addr+len-1]
+* *int prot* is the desired memory protection needed as discussed in [**7.mmap()**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/README.md#7-mmap)

@@ -65,7 +65,7 @@ ssize_t write(int fd, const void *buf, size_t count);
 ```
 Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
-read(0, "source.txt\n", 1024)           = 11
+write(1, "Enter the filename to open for r"..., 40) = 40
 ```
 Line 41 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```

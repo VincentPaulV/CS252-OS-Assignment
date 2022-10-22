@@ -67,9 +67,9 @@ Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 ```
 write(1, "Enter the filename to open for r"..., 40) = 40
 ```
-Line 41 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+Line 42 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
-read(3, "\tSONNETS\r\n\r\n\r\n\r\nTO THE ONLY BEGE"..., 512) = 512
+write(4, "\tSONNETS\r\n\r\n\r\n\r\nTO THE ONLY BEGE"..., 512) = 512
 ```
 In the above 2 write() statements:
 * The file descriptor(int fd) is mentioned

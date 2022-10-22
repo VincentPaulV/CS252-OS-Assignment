@@ -46,7 +46,7 @@ This program works by first prompting the user for the name of the source and de
 ```
 ssize_t read(int fd, void *buf, size_t count);
 ```
-Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+Line 35 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
 read(0, "source.txt\n", 1024)           = 11
 ```
@@ -89,3 +89,32 @@ In the above execve() statement:
 * The path name is the object file to be executed
 * *argv* is an array of pointers to strings passed to the new program as its command-line arguments (in the above case is "output.o").
 * *envp* is an array of pointers to strings, conventionally of the form key=value, which are passed as the environment of the new program.The envp array must be terminated by a NULL pointer(in our case is a hexadecimal address).
+
+### 4. **openat():** 
+```
+int openat(int dirfd, const char *pathname, int flags);
+int openat(int dirfd, const char *pathname, int flags, mode_t mode);
+```
+Line 5 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+```
+Line 9 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+```
+Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+openat(AT_FDCWD, "source.txt", O_RDONLY) = 3
+```
+Line 39 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+openat(AT_FDCWD, "destination.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4
+```
+
+In the above openat() statement:
+* If pathname is relative and dirfd is the special value AT_FDCWD, then pathname is interpreted relative to the current working directory of the calling process
+* The pathnames are given as arguments.
+* Flags are O_RDONLY|O_CLOEXEC, O_RDONLY, O_WRONLY|O_CREAT|O_TRUNC
+* mode_t mode is given as 0666
+* Returned values are used as the **file descriptor** arguments for read() and write() statements.

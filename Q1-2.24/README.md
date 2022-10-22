@@ -55,9 +55,9 @@ Line 41 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 read(3, "\tSONNETS\r\n\r\n\r\n\r\nTO THE ONLY BEGE"..., 512) = 512
 ```
 In the above 2 read() statements the 
-1. File Descriptor(int fd) is mentioned
-2. The text being read is in buffer(void *buf)
-3. The count (size_t - unsigned integer in POSIX) is 512 or 1024 bytes read.
+  1. File Descriptor(int fd) is mentioned
+  2. The text being read is in buffer(void *buf)
+  3. The count (size_t - unsigned integer in POSIX) is 512 or 1024 bytes read.
 
 2. **write():** 
 ```

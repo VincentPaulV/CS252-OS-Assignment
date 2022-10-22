@@ -39,9 +39,9 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 **Command:** 
 >*strace -c -osyscall_log ./output.o*
 
+### [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
+This program works by first prompting the user for the name of the source and destination files.
 
->This program works by first prompting the user for the name of the source and destination files. 
-Write this program using either the POSIX or Windows API. 
 Be sure to include all necessary error checking, including ensuring that the source
 
 

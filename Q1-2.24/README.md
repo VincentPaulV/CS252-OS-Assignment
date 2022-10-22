@@ -75,3 +75,17 @@ In the above 2 write() statements:
 * The file descriptor(int fd) is mentioned
 * The text being wriiten is in buffer(void *buf)
 * The count (size_t - unsigned integer in POSIX) is **upto** 512 bytes read (40 in the case of Line 33).
+
+### 3. **execve():** 
+```
+int execve(const char *pathname, char *const argv[],char *const envp[]);
+```
+Line 1 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+execve("./output.o", ["./output.o"], 0x7ffe8e964f88 /* 24 vars */) = 0
+```
+
+In the above execve() statement:
+* The path name is the object file to be executed
+* *argv* is an array of pointers to strings passed to the new program as its command-line arguments (in the above case is "output.o").
+* *envp* is an array of pointers to strings, conventionally of the form key=value, which are passed as the environment of the new program.The envp array must be terminated by a NULL pointer(in our case is a hexadecimal address).

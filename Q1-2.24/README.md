@@ -16,12 +16,23 @@ These tools can be used as follows (assume that the name of the executable file 
 Since Windows systems do not provide such a tool, you will have to trace through the Windows version of this program using a debugger.
 
 ## Approach:
+Ubuntu(WSL) has been used for executing the strace commands in the terminal.
+> WSL is Windows Subsystem for Linux which is a layer which is used for natively running Linux commands on Windows machines.
+
 ### Description of Files: 
 1. The program that copies the contents of one file to a destination file is written in **C Language** and is named as [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
-2. The file whose content is copied is named [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt)
-3. The compiled C Program gives us an object file which has been named as [**output.o**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output.o)
-4. Ubuntu(WSL) has been used for executing the strace commands in the terminal.
-> WSL is Windows Subsystem for Linux which is a layer which is used for natively running Linux commands on Windows machines.
+2. The file whose content is copied is named [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt).
+3. The compiled C Program gives us an object file which has been named as [**output.o**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output.o).
+
+**Command:** 
+>*gcc -o output.o copy_paste_content.c*
+
+## Description of Logs:
+1. [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log) contains all the system calls made by the program during its runtime.
+
+**Command:** 
+>*strace -osyscall_log ./output.o*
+
 
 
 >This program works by first prompting the user for the name of the source and destination files. 

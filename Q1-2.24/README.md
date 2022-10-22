@@ -41,7 +41,13 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 
 ### [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 This program works by first prompting the user for the name of the source and destination files.
-![Complete run](/images/initial_program_run.png)
+
 Be sure to include all necessary error checking, including ensuring that the source
 
+### List of system calls made
+1. **read:** 
+```
+ssize_t read(int fd, void *buf, size_t count);
+```
 
+2. **write:** 

@@ -27,7 +27,7 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 **Command:** 
 >*gcc -o output.o copy_paste_content.c*
 
-## Description of Logs:
+### Description of Logs:
 1. [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log) contains all the system calls made by the program during its runtime.
 
 **Command:** 

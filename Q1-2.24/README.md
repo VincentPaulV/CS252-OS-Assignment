@@ -55,7 +55,7 @@ read(0, "source.txt\n", 1024)           = 11
 ```
 Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
-read(0, "source.txt\n", 1024)           = 11
+read(3, "\tSONNETS\r\n\r\n\r\n\r\nTO THE ONLY BEGE"..., 512) = 512
 ```
 
 2. **write():** 

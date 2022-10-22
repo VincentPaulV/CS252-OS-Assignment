@@ -332,7 +332,7 @@ Line 29 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 ```
 munmap(0x7fa8cb3aa000, 32876)           = 0
 ```
-In the above munmap() statements:
+In the above munmap() statement:
 * The munmap() system call deletes the mappings for the specified address range, and causes further references to addresses within the range to generate invalid memory references.
   >Here we are unmapping 0x7fa8cb3aa000, 32876 which was mapped in Line 7
   ```
@@ -346,21 +346,31 @@ In the above munmap() statements:
 
 ### 13. **access():** 
 ```
-int munmap(void *addr, size_t length);
+int access(const char *pathname, int mode);
 ```
-Line 29 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+Line 4 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
-munmap(0x7fa8cb3aa000, 32876)           = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
 ```
-In the above munmap() statements:
-* The munmap() system call deletes the mappings for the specified address range, and causes further references to addresses within the range to generate invalid memory references.
-  >Here we are unmapping 0x7fa8cb3aa000, 32876 which was mapped in Line 7
-  ```
-  mmap(NULL, 32876, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa8cb3aa000
-  ```
+In the above access() statement:
+* access() checks whether the calling process can access the file *pathname*.
+*  herewe are trying to access *pathname* = "/etc/ld.so.preload" with mode as R_OK (testing whether the file exists and grants read operation).
 
-* The region is also automatically unmapped when the process is terminated.
+  >Here we are getting error as EN0ENT 
+  i.e. A component of pathname does not exist or is a dangling symbolic link.
 
+### 14. **lseek():** 
+```
+off_t lseek(int fd, off_t offset, int whence);
+```
+Line 431 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+```
+lseek(0, -1, SEEK_CUR)                  = -1 ESPIPE (Illegal seek)
+```
+In the above lseek() statement:
+* lseek() repositions the file offset of the open file description associated with the file descriptor fd to the argument offset according to the directive whence
+* Here the whence is is SEEK_CUR and the file offset is set to its current location plus offset bytes.
+* lseek() returns the resulting offset location as measured in bytes from the beginning of the file.On error, the value (off_t) -1 is returned and errno is set to indicate the error.
 
-  >Closing the file descriptor does not unmap the region.
-
+  >Here we are getting error as ESPIPE
+  i.e. fd is associated with a pipe, socket, or FIFO.

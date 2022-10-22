@@ -63,15 +63,15 @@ In the above 2 read() statements:
 ```
 ssize_t write(int fd, const void *buf, size_t count);
 ```
-Line 36 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+Line 33 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
 write(1, "Enter the filename to open for r"..., 40) = 40
 ```
-Line 42 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
+Line 44 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log)
 ```
 write(4, "\tSONNETS\r\n\r\n\r\n\r\nTO THE ONLY BEGE"..., 512) = 512
 ```
 In the above 2 write() statements:
 * The file descriptor(int fd) is mentioned
-* The text being read is in buffer(void *buf)
-* The count (size_t - unsigned integer in POSIX) is 512 or 1024 bytes read.
+* The text being wriiten is in buffer(void *buf)
+* The count (size_t - unsigned integer in POSIX) is **upto** 512 bytes read (40 in the case of Line 33).

@@ -32,11 +32,15 @@ Then we use a utility that traces system calls.
 >In this case we use *strace*
 
 As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are.
+By analyzing the system calls log we can depply understand what exactly the OS does when it comes to the system calls made and how our program actually works!
 
 
 
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+
+## What are Threads?
+
 
 
 

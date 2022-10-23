@@ -39,6 +39,9 @@ By analyzing the system calls log we can depply understand what exactly the OS d
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
+## What are Threads?
+
+
 
 
 

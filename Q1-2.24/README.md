@@ -37,7 +37,7 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 4. [**syscall_log_count**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_count) is a systematic log file which contains the time distribution of all system calls made, giving better readability.
   
     **Command:** 
-    >*strace -c -osyscall_log ./output.o*
+    >*strace -c -osyscall_log_count ./output.o*
     
 ### The C Program: [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 

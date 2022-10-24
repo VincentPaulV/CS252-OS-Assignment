@@ -57,8 +57,9 @@ Thread creation is light-weight relative to Process Creation which is heavy-weig
 Hence we can agree to the fact that
 > Threads simplify code, increase efficiency and it can be observed that generally kernels are multithreaded
 
+### Single Threaded and Multi Threaded Processes:
 
-
+![API-System Call-OS Relationship](/images/multi_process_thread.png)
 ## Why do we make Threads?
 As we have seen that thread creation is light weight and helps us take the essence of multi-core architecture, [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
 

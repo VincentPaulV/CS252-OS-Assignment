@@ -20,6 +20,7 @@ The worker threads will set these values, and the parent thread will output the 
 
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***
+
 ```
     pthread_t t1;
     pthread_t t2;

@@ -26,9 +26,10 @@ The worker threads will set these values, and the parent thread will output the 
     pthread_t t3;
 ```
 
+
 ### **2. Function *pthread_create():***
 ```
-int pthread_create(pthread_t *restrict thread,const pthread_attr_t *restrict attr, void *(*start_routine)(void *), void *restrict arg);
+int pthread_create(pthread_t *__restrict__thread,const pthread_attr_t *__restrict__attr, void *(*start_routine)(void *), void *restrict arg);
 ```
 Lines 94-98 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 ```

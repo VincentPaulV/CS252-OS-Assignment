@@ -5,7 +5,7 @@
 ##  Introducing System Calls
 When you are given a task like picking up a pen from a table what is the whole thing that your brain does to make you complete it?
 
-It takes in the task statement as a command, processes it, asks your hand to perform the function of picking up nthe pen and terminates the task.
+It takes in the task statement as a command, processes it, asks your hand to perform the function of picking up the pen and terminates the task.
 
 That's exactly how system calls work in the operating Systems we use today.
 The task of picking up a pen can be said in any language you understand , the brain creates an impulse which your body understands and asks your hand to complete the task.

@@ -113,6 +113,9 @@ As we've seen the usage of threads could prove beneficial when it comes to **Res
 - CS252 Lecture Notes
 - 10th edition of Operating System Concepts by Abraham Silberschatz, Peter Baer Galvin and Greg Gagne.
 
+## Author:
+Vincent Paul Veernapu
+201ME365
 
 
 

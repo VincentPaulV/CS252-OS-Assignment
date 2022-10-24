@@ -20,12 +20,14 @@ The worker threads will set these values, and the parent thread will output the 
 
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***
-
+Line 88-90 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 ```
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
 ```
+
+pthread_t is the data type for thread.
 
 
 ### **2. Function *pthread_create():***
@@ -47,3 +49,22 @@ Here in the above 3 **pthread_create()** statements:
   2. Second argument is attr pointing to a pthread_attr_t structure whose contents are used at thread creation time to determine attributes for the new thread. This structure is initialized using pthread_attr_init() function.In the above case attr is given as NULL, as we want the thread is created with default attributes.
   3. Third argument is a pointer to the start_routine of a thread that is the function invoked on the thread creation. In our case the functions invoked are *thread_average*, *thread_minimum*, *thread_maximum* respectively.
   4. Fourth Argument is *the sole* argument passed to start_routine() when invoked during thread creation. In our case it is NULL i.e. no arg is passed to our start_routine.
+  5. On success, these functions return 0; on error, they return a nonzero error number.
+
+### **3. Function *pthread_join():***
+```
+int pthread_join(pthread_t thread, void **retval);
+```
+Lines 100-104 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
+```
+    pthread_join(t1,NULL);
+
+    pthread_join(t2,NULL);
+
+    pthread_join(t3,NULL);
+```
+Here in the above 3 **pthread_join()** statements:
+
+  1. The pthread_join() function waits for the thread specified by thread to terminate.  If that thread has already terminated, then pthread_join() returns immediately.The thread specified by thread must be joinable.
+  2. First argument is a pthread_t type that is the data type for threads as per "pthreads.h" library which have already been defined as t1, t2, t3 respectively.
+  3. Second argument is retval that is if not NULL then it has the exit status of thread when pthread_exit() was called. In our case we haven't called pthread_exit() prior to pthread_join() hence we give argument as NULL.

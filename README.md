@@ -19,6 +19,8 @@ To formally address the definition of a system call we can say that:
 
 Generally being written in C or C++ most of the System Calls are accessed by programs via a high level Application Program Interface (API) rather than directy using the system call.
 
+>In the above analogy of human picking up a pen, the instruction of "picking up of a pen" said in whatsoever language which you understand is the analogy to API's as in the Operating Systems.
+
 >In fact even *printf()* in C Language is an API to call *write()* in UNIX systems or *WriteFile()* in Windows
 
 ### System Call Implementation:

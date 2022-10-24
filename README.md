@@ -103,8 +103,11 @@ Some of the major benfits we have are:
   * iOS
   * Android *etc*
 
+## Motivation for [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
-[**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum) using **PThreads**
+Here we make threads for different computational processes mentioned (i.e. average, minimum, and maximum) using [**POSIX Threads**](https://github.com/VincentPaulV/CS252-OS-Assignment#user-threads-and-kernel-threads).
+
+As we've seen the usage of threads could prove benefitial when it comes to **Responsiveness**, **Resource Sharing**, **Economy**, **Scalability**, with this rather simple program we can understand the essence of thread-making with the strings of the benefits sliding over.
 
 
 

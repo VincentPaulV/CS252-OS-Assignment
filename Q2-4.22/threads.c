@@ -82,29 +82,34 @@ int main(void)
     struct timezone TimeZone_Final; 
     long time_start, time_end; 
     double time_overhead;
+
     input();
-    int i;
+    
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
-    gettimeofday(&TimeValue_Start, &TimeZone_Start);
 
-	worker_threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
-	//pthread_join(t1,NULL);
+    gettimeofday(&TimeValue_Start, &TimeZone_Start);
+    
+    worker_threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
 	
     worker_threads[1]=pthread_create(&t2,NULL,&thread_minimum,NULL);
-    //pthread_join(t2,NULL);
 	
     worker_threads[2]=pthread_create(&t3,NULL,&thread_maximum,NULL);
-    //pthread_join(t3,NULL);
 
     pthread_join(t1,NULL);
+
     pthread_join(t2,NULL);
+
     pthread_join(t3,NULL);
 
     gettimeofday(&TimeValue_Final, &TimeZone_Final);
-    time_start = TimeValue_Start.tv_sec * 1000000 + TimeValue_Start.tv_usec; 
+
+    time_start = TimeValue_Start.tv_sec * 1000000 + TimeValue_Start.tv_usec;
+
     time_end = TimeValue_Final.tv_sec * 1000000 + TimeValue_Final.tv_usec; 
+
     time_overhead = (time_end - time_start)/1000000.0;
+
     printf("\n\n\tTime in Seconds (T) : %lf\n",time_overhead);
 }

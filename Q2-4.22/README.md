@@ -17,3 +17,10 @@ The worker threads will set these values, and the parent thread will output the 
 (We could obviously expand this program by creating additional threads that determine other statistical values, such as median and standard deviation).
 
 ## Approach:
+
+## List of Data Types & Functions involved in thread-making:
+### **1. Function *pthread_create():***
+Line 
+```
+worker=pthread_create(&t1,NULL,&thread_average,NULL);
+```

@@ -206,4 +206,10 @@ Time in Seconds (T) : 0.023717
 ```
 Multi-Threading works **0.028022 seconds faster** than Single Threaded Program.
 
+## References:
+### The PThread Functions:
+* https://man7.org/linux/man-pages/man3/pthread_create.3.html
+* https://man7.org/linux/man-pages/man3/pthread_join.3.html
 
+### The Time Analysis Code:
+* NITK IT Department OS Assignment Solutions

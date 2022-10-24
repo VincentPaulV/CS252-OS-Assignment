@@ -2,8 +2,19 @@
 
 ### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
 
-## What are System Calls?
-System Calls are the programming interface to the services provided by the Operating System.
+##  Introducing System Calls
+When you are given a task like picking up a pen from a table what is the whole thing that your brain does to make you complete it?
+
+It takes in the task statement as a command, processes it, asks your hand to perform the function of picking up nthe pen and terminates the task.
+
+That's exactly how system calls work in the operating Systems we use today.
+The task of picking up a pen can be said in any language you understand , the brain creates an impulse which your body understands and asks your hand to complete the task.
+
+The impulse that your brain sends is pretty much what a system call does in  an operatig system.
+
+To formally address the definition of a system call we can say that:
+
+> "System Calls are the programming interface to the services provided by the Operating System."
 
 Generally being written in C or C++ most of the System Calls are accessed by programs via a high level Application Program Interface (API) rather than directy using the system call.
 

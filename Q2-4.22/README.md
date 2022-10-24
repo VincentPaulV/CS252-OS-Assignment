@@ -157,4 +157,53 @@ Here in the above 3 **pthread_join()** statements:
   3. Second argument is retval that is if not NULL then it has the exit status of thread when pthread_exit() was called. In our case we haven't called pthread_exit() prior to pthread_join() hence we give argument as NULL.
 
 ## Analysis of Time:
+### Description of Files:
+1. [**threads_time.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads_time.c) on compilation gives [**thread_time**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/thread_time) and contains the time-based checking for MAX_COUNT=5000000 elements.
+```
+vince@MacBook-Pro-2 Q2-4.22 % gcc -o thread_time threads_time.c -lm -pthread
+threads_time.c:43:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+threads_time.c:59:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+threads_time.c:75:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+3 warnings generated.
+vince@MacBook-Pro-2 Q2-4.22 % ./thread_time
+
+The minimum value is 0.000000
+The average value is 2228030.750000
+The maximum value is 4999999.000000
+
+        Time in Seconds (T) : 0.023717
+```
+
+2.[**thread_single_time.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/thread_single_time.c) on compilation gives [**sthread_time**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/sthread_time) and contains the time-based checking for MAX_COUNT=5000000 elements.
+```
+vince@MacBook-Pro-2 Q2-4.22 % gcc -o thread_time threads_time.c -lm -pthread
+vince@MacBook-Pro-2 Q2-4.22 % gcc -o sthread_time thread_single_time.c -lm -pthread
+vince@MacBook-Pro-2 Q2-4.22 % ./sthread_time
+
+The average value is 2496735.250000
+The minimum value is 0.000000
+The maximum value is 4999999.000000
+
+        Time in Seconds (T) : 0.051739
+```
+
+As we can observe here for 5000000 elements(taken to increase the computation time over the thread overhead so that we can emphasize over the thread efficiency) for:
+
+**Single Thread:**
+```
+Time in Seconds (T) : 0.051739
+```
+
+**Multi Thread:**
+```
+Time in Seconds (T) : 0.023717
+```
+Multi-Threading works **0.028022 seconds faster** than Single Threaded Program.
+
 

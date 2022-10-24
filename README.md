@@ -7,10 +7,10 @@ When you are given a task like picking up a pen from a table what is the whole t
 
 It takes in the task statement as a command, processes it, asks your hand to perform the function of picking up the pen and terminates the task.
 
-That's exactly how system calls work in the operating Systems we use today.
+That's exactly how system calls work in the Operating Systems we use today.
 The task of picking up a pen can be said in any language you understand , the brain creates an impulse which your body understands and asks your hand to complete the task.
 
-The impulse that your brain sends is pretty much what a system call does in  an operatig system.
+The impulse that your brain sends is pretty much what a system call does in an Operating system.
 
 To formally address the definition of a system call we can say that:
 

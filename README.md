@@ -8,9 +8,10 @@ When you are given a task like picking up a pen from a table what is the whole t
 It takes in the task statement as a command, processes it, asks your hand to perform the function of picking up the pen and terminates the task.
 
 That's exactly how system calls work in the Operating Systems we use today.
+
 The task of picking up a pen can be said in any language you understand , the brain creates an impulse which your body understands and asks your hand to complete the task.
 
-The impulse that your brain sends is pretty much what a system call does in an Operating system.
+The impulse that your brain sends and only your body uderstands is pretty much what a system call does in an Operating System.
 
 To formally address the definition of a system call we can say that:
 
@@ -43,6 +44,7 @@ Then we use a utility that traces system calls.
 >In this case we use *strace*
 
 As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are.
+
 By analyzing the system calls log we can deeply understand what exactly the OS does when it comes to the system calls made and how our program actually works!
 
 
@@ -63,6 +65,7 @@ Naming a few tasks which a thread would likely perform within an application wou
 * Answer a network request
 
 So why do we make a thread for a process?
+
 Thread creation is light-weight relative to Process Creation which is heavy-weight and hence for many of the real time cases making threads within a process rather than "forking" a new process and thus making it more efficient than creating a new process.
 
 Hence we can agree to the fact that

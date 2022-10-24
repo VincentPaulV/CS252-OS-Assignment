@@ -76,8 +76,35 @@ Hence we can agree to the fact that
 ### Single Threaded and Multi Threaded Processes:
 
 ![Multi-Thread vs Single Thread](/images/multi_thread_process.png)
-## Why do we make Threads?
-As we have seen that thread creation is light weight and helps us take the essence of multi-core architecture, [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
+### Why do we make Threads?
+Some of the major benfits we have are:
+* **Responsiveness:** May allow continued execution if part of process is blocked, especially important for user interfaces
+* **Resource Sharing:** Threads share resources of process, easier than shared memory or message passing as observed in Inter-Process Communication
+* **Economy:** It is cheaper than process creation, thread switching has lower overhead than context switching
+
+   > Thread switching is observed when we see the output of [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+* **Scalability:** helps us take the essence of multi-core architecture
+
+### User Threads and Kernel Threads:
+
+**User threads:** Here the management is done by user-level threads library
+  
+  Three primary thread libraries:
+  * POSIX Pthreads
+  * Windows threads
+  * Java threads
+
+**Kernel threads:** These threads are supported by the Kernel
+
+  Virtually all general-purpose operating systems, including:
+  * Windows
+  * Linux
+  * Mac OS X
+  * iOS
+  * Android *etc*
+
+
+[**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
 
 
 

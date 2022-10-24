@@ -32,7 +32,7 @@ Then we use a utility that traces system calls.
 >In this case we use *strace*
 
 As we have a basic idea about [System Calls](https://github.com/VincentPaulV/CS252-OS-Assignment#what-are-system-calls) and what they mean, we can delve into understanding what are the actual system calls made are.
-By analyzing the system calls log we can depply understand what exactly the OS does when it comes to the system calls made and how our program actually works!
+By analyzing the system calls log we can deeply understand what exactly the OS does when it comes to the system calls made and how our program actually works!
 
 
 
@@ -59,7 +59,7 @@ Hence we can agree to the fact that
 
 ### Single Threaded and Multi Threaded Processes:
 
-![API-System Call-OS Relationship](/images/multi_process_thread.png)
+![Multi-Thread vs Single Thread](/images/multi_thread_process.png)
 ## Why do we make Threads?
 As we have seen that thread creation is light weight and helps us take the essence of multi-core architecture, [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
 

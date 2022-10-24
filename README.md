@@ -39,20 +39,31 @@ By analyzing the system calls log we can depply understand what exactly the OS d
 
 ### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
-## What are Threads?
-Threads are a segment of a process and run within a process.
+## Threads - A Synopsis
+The most simplest way to define a thread would be to say that:
+> "Threads are a segment of a process and run within a process."
 
-Multiple tasks within an application can be implemented by seperate threads.
+So it's safe to say that multiple tasks within an application can be implemented by seperate threads.
 
-Some of the tasks that a thread can are:
+Naming a few tasks which a thread would likely perform within an application would include:
 * Update display
 * Fetch data
 * Spell checking
 * Answer a network request
 
-Thread creation is light-weight relative to Process Creation which is heavy-weight.         
-Threads simplify code, increase efficiency
-> Generally kernels are multithreaded
+So why do we make a thread for a process?
+Thread creation is light-weight relative to Process Creation which is heavy-weight and hence for many of the real time cases making threads within a process rather than "forking" a new process and thus making it more efficient than creating a new process.
+
+Hence we can agree to the fact that
+> Threads simplify code, increase efficiency and it can be observed that generally kernels are multithreaded
+
+
+
+## Why do we make Threads?
+As we have seen that thread creation is light weight and helps us take the essence of multi-core architecture, [**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
+
+
+
 
 
 

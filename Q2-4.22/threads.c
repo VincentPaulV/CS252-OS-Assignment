@@ -8,10 +8,11 @@ https://gist.github.com/Jabiribn/e58bf13c678953891900e5f982b48037
 #include<pthread.h>
 
 /*  Global Variables    */
-#define MAX_COUNT 50000
+#define MAX_COUNT 500000
 float array[MAX_COUNT];
 int element_count;
 long long int i;
+int worker_threads[3];
 
 /*  The Average, Minimum, Maximum Values: */
 float average;
@@ -21,12 +22,11 @@ float maximum;
 /*  Input Function  */
 void input()
 {
-    /*printf("Enter element count: ");
-    scanf("%d",&element_count);*/
-    for(i=0;i<MAX_COUNT;i++)
+    printf("Enter element count: ");
+    scanf("%d",&element_count);
+    for(i=0;i<element_count;i++)
     {
-        //scanf("%f",&array[i]);
-        array[i] = i;
+        scanf("%f",&array[i]);
     }
 }
 
@@ -34,11 +34,11 @@ void input()
 void *thread_average()
 {
     float sum=0;
-    for(i=0;i<MAX_COUNT;i++)
+    for(i=0;i<element_count;i++)
     {
         sum  = sum + array[i];
     }
-    average = sum / MAX_COUNT ;
+    average = sum / element_count ;
     printf("\nThe average value is %f",average);
 }
 
@@ -47,7 +47,7 @@ void *thread_minimum()
 {
     float temp;
     temp = array[0];
-    for(i=0;i<MAX_COUNT;i++)
+    for(i=0;i<element_count;i++)
     {
         if(array[i]<temp)
         {
@@ -63,7 +63,7 @@ void *thread_maximum()
 {
     float temp;
     temp = array[0];
-    for(i=0;i<MAX_COUNT;i++)
+    for(i=0;i<element_count;i++)
     {
         if(array[i]>temp)
         {
@@ -82,32 +82,20 @@ int main(void)
     struct timezone TimeZone_Final; 
     long time_start, time_end; 
     double time_overhead;
-    /*double pi,x;
-    int i,N;
-    pi=0.0;
-    N=1000;*/
-    
-    /*#pragma omp parallel for private(x) reduction(+:pi)
-    for(i=0;i<=N;i++) 
-    {
-        x=(double)i/N;
-        pi+=4/(1+x*x); 
-    }*/
     input();
-     
     int i;
-    int threads[3];
     pthread_t t1;
     pthread_t t2;
     pthread_t t3;
     gettimeofday(&TimeValue_Start, &TimeZone_Start);
-	threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
+
+	worker_threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
 	//pthread_join(t1,NULL);
 	
-    threads[1]=pthread_create(&t2,NULL,&thread_minimum,NULL);
+    worker_threads[1]=pthread_create(&t2,NULL,&thread_minimum,NULL);
     //pthread_join(t2,NULL);
 	
-    threads[2]=pthread_create(&t3,NULL,&thread_maximum,NULL);
+    worker_threads[2]=pthread_create(&t3,NULL,&thread_maximum,NULL);
     //pthread_join(t3,NULL);
 
     pthread_join(t1,NULL);

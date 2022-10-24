@@ -16,3 +16,4 @@ The variables representing the average, minimum, and maximum values will be stor
 The worker threads will set these values, and the parent thread will output the values once the workers have exited. 
 (We could obviously expand this program by creating additional threads that determine other statistical values, such as median and standard deviation).
 
+## Approach:

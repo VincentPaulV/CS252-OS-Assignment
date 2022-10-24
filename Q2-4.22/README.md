@@ -180,7 +180,7 @@ The maximum value is 4999999.000000
         Time in Seconds (T) : 0.023717
 ```
 
-2.[**thread_single_time.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/thread_single_time.c) on compilation gives [**sthread_time**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/sthread_time) and contains the time-based checking for MAX_COUNT=5000000 elements.
+2. [**thread_single_time.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/thread_single_time.c) on compilation gives [**sthread_time**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/sthread_time) and contains the time-based checking for MAX_COUNT=5000000 elements.
 ```
 vince@MacBook-Pro-2 Q2-4.22 % gcc -o thread_time threads_time.c -lm -pthread
 vince@MacBook-Pro-2 Q2-4.22 % gcc -o sthread_time thread_single_time.c -lm -pthread

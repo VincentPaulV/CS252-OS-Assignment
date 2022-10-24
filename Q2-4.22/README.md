@@ -17,6 +17,7 @@ The worker threads will set these values, and the parent thread will output the 
 (We could obviously expand this program by creating additional threads that determine other statistical values, such as median and standard deviation).
 
 ## Approach:
+### The C Program: [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 Global Variables:
 As mentioned in the question we have to globally define average, minimum, and maximum values
 ```

@@ -107,7 +107,7 @@ void *thread_maximum()
 
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***
-Line 88-90 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
+Line 76-78 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 ```
     pthread_t t1;
     pthread_t t2;
@@ -121,7 +121,7 @@ pthread_t is the data type for thread.
 ```
 int pthread_create(pthread_t *__restrict__thread,const pthread_attr_t *__restrict__attr, void *(*start_routine)(void *), void *restrict arg);
 ```
-Lines 94-98 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
+Lines 80-84 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 ```
     worker_threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
 	
@@ -142,7 +142,7 @@ Here in the above 3 **pthread_create()** statements:
 ```
 int pthread_join(pthread_t thread, void **retval);
 ```
-Lines 100-104 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
+Lines 86-90 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)
 ```
     pthread_join(t1,NULL);
 

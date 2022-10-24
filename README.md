@@ -110,7 +110,7 @@ Here we make threads for different computational processes mentioned (i.e. avera
 As we've seen the usage of threads could prove beneficial when it comes to **Responsiveness**, **Resource Sharing**, **Economy**, **Scalability**, with this rather simple program we can understand the essence of thread-making with the strings of the benefits sliding over.
 
 ## References:
-- CS252 Lecture Notes
+- CS252(Minor) Lecture Notes by Dr. Mohit Tahiliani
 - 10th edition of Operating System Concepts by Abraham Silberschatz, Peter Baer Galvin and Greg Gagne.
 
 ## Author:

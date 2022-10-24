@@ -39,7 +39,22 @@ element_count is the number of elements user wants to enter.
 i is the common looping variable globalized for convienience.
 worker_threads[3] is an array storing the returned values of pthread_create()
 
-We define 3 functions namely *thread_average*, *thread_minimum*, *thread_maximum* as below:
+Input function:
+
+```
+/*  Input Function  */
+void input()
+{
+    printf("Enter element count: ");
+    scanf("%d",&element_count);
+    for(i=0;i<element_count;i++)
+    {
+        scanf("%f",&array[i]);
+    }
+}
+```
+
+We define 3 functions for start_routine namely *thread_average*, *thread_minimum*, *thread_maximum* as below:
 
 ```
 void *thread_average()
@@ -70,6 +85,7 @@ void *thread_minimum()
     printf("\nThe minimum value is %f",minimum);
 }
 ```
+
 ```
 void *thread_maximum()
 {
@@ -86,6 +102,8 @@ void *thread_maximum()
     printf("\nThe maximum value is %f",maximum);
 }
 ```
+
+
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***
 Line 88-90 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)

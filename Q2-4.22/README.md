@@ -155,3 +155,6 @@ Here in the above 3 **pthread_join()** statements:
   1. The pthread_join() function waits for the thread specified by thread to terminate.  If that thread has already terminated, then pthread_join() returns immediately.The thread specified by thread must be joinable.
   2. First argument is a pthread_t type that is the data type for threads as per "pthreads.h" library which have already been defined as t1, t2, t3 respectively.
   3. Second argument is retval that is if not NULL then it has the exit status of thread when pthread_exit() was called. In our case we haven't called pthread_exit() prior to pthread_join() hence we give argument as NULL.
+
+## Analysis of Time:
+

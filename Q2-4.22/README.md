@@ -17,7 +17,75 @@ The worker threads will set these values, and the parent thread will output the 
 (We could obviously expand this program by creating additional threads that determine other statistical values, such as median and standard deviation).
 
 ## Approach:
+Global Variables:
+As mentioned in the question we have to globally define average, minimum, and maximum values
+```
+/*  The Average, Minimum, Maximum Values: */
+float average;
+float minimum;
+float maximum;
+```
+The other global variables
+```
+/*  Global Variables    */
+#define MAX_COUNT 500000
+float array[MAX_COUNT];
+int element_count;
+long long int i;
+int worker_threads[3];
+```
+MAX_COUNT is the maximum size of array.
+element_count is the number of elements user wants to enter.
+i is the common looping variable globalized for convienience.
+worker_threads[3] is an array storing the returned values of pthread_create()
 
+We define 3 functions namely *thread_average*, *thread_minimum*, *thread_maximum* as below:
+
+```
+void *thread_average()
+{
+    float sum=0;
+    for(i=0;i<element_count;i++)
+    {
+        sum  = sum + array[i];
+    }
+    average = sum / element_count ;
+    printf("\nThe average value is %f",average);
+}
+```
+
+```
+void *thread_minimum()
+{
+    float temp;
+    temp = array[0];
+    for(i=0;i<element_count;i++)
+    {
+        if(array[i]<temp)
+        {
+            temp = array[i];
+        }
+    }
+    minimum = temp;
+    printf("\nThe minimum value is %f",minimum);
+}
+```
+```
+void *thread_maximum()
+{
+    float temp;
+    temp = array[0];
+    for(i=0;i<element_count;i++)
+    {
+        if(array[i]>temp)
+        {
+            temp = array[i];
+        }
+    }
+    maximum = temp;
+    printf("\nThe maximum value is %f",maximum);
+}
+```
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***
 Line 88-90 in [**threads.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q2-4.22/threads.c)

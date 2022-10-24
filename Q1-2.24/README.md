@@ -435,6 +435,9 @@ In the above lseek() statement:
   i.e. fd is associated with a pipe, socket, or FIFO.
 
 ## References:
-### System Calls:
+### Information and Reference of System Calls:
 * https://man7.org/linux/man-pages/man2/
+### The C Program:
+* https://www.geeksforgeeks.org/c-program-copy-contents-one-file-another-file/
+
   

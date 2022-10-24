@@ -1,6 +1,6 @@
 # CS252-OS-Assignment
 
-### [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
+# [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
 
 ##  Introducing System Calls
 When you are given a task like picking up a pen from a table what is the whole thing that your brain does to make you complete it?
@@ -52,7 +52,7 @@ By analyzing the system calls log we can deeply understand what exactly the OS d
 
 
 
-### [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
+# [Question 2: Chapter 4 - 4.22](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22)
 
 ## Threads - A Synopsis
 The most simplest way to define a thread would be to say that:
@@ -104,8 +104,7 @@ Some of the major benfits we have are:
   * Android *etc*
 
 
-[**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum).
-
+[**4.22**](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q2-4.22) makes threads for different computational processes mentioned (i.e.average, minimum, and maximum) using **PThreads**
 
 
 

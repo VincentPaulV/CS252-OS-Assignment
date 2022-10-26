@@ -118,7 +118,11 @@ Name: Vincent Paul Veernapu
 
 Roll No.: 201ME365
 
-Vth Semester B.Tech(Mechanical Engineering)
+3rd Year
+
+B.Tech 
+
+Mechanical Engineering
 
 National Institute of Technology Karnataka, Surathkal (NITK)
  

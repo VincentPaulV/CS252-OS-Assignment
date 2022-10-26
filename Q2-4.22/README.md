@@ -138,7 +138,25 @@ Here in the above 3 **pthread_create()** statements:
   4. Fourth Argument is *the sole* argument passed to start_routine() when invoked during thread creation. In our case it is NULL i.e. no arg is passed to our start_routine.
   5. On success, these functions return 0; on error, they return a nonzero error number.
 
-### **3. Function *pthread_join():***
+### **3. Data Type *pthread_attr_t:***
+```
+    typedef struct {
+    int                 __flags;
+    size_t              __stacksize;
+    void                *__stackaddr;
+    void                (*__exitfunc)(void *status);
+    int                 __policy;
+    struct sched_param  __param;
+    unsigned            __guardsize;
+} pthread_attr_t;
+```
+
+pthread_attr_t contains the attributes of thread which can be initialized by pthread_attr_init().
+
+In our program, when we call pthread_create() and set the the second argument as NULL, we get the *default* attributes set for pthread_attr_t.
+
+
+### **4. Function *pthread_join():***
 ```
 int pthread_join(pthread_t thread, void **retval);
 ```

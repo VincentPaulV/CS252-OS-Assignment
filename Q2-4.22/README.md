@@ -228,9 +228,12 @@ Multi-Threading works **0.028022 seconds faster** than Single Threaded Program.
 ### The C Program:
 * https://gist.github.com/Jabiribn/e58bf13c678953891900e5f982b48037
 
-### The PThread Functions:
+### The PThread Data Types & Functions:
 * https://man7.org/linux/man-pages/man3/pthread_create.3.html
+* https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-pthread-create-create-thread#ptcrea
 * https://man7.org/linux/man-pages/man3/pthread_join.3.html
+* https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-pthread-join-wait-thread-end
+* http://www.qnx.com/developers/docs/qnxcar2/index.jsp?topic=%2Fcom.qnx.doc.neutrino.getting_started%2Ftopic%2Fs1_procs_thread_attr.html
 
 ### The Time Analysis Code:
 * NITK IT Department OS Assignment Solutions (Referred from Kalyane Satyam Sanjay 201IT269)

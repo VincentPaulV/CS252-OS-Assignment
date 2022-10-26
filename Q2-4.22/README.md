@@ -215,4 +215,4 @@ Multi-Threading works **0.028022 seconds faster** than Single Threaded Program.
 * https://man7.org/linux/man-pages/man3/pthread_join.3.html
 
 ### The Time Analysis Code:
-* NITK IT Department OS Assignment Solutions
+* NITK IT Department OS Assignment Solutions (Referred from Kalyane Satyam Sanjay 201IT269)

@@ -118,9 +118,7 @@ Name: Vincent Paul Veernapu
 
 Roll No.: 201ME365
 
-3rd Year
-
-B.Tech 
+B.Tech 3rd Year 
 
 Mechanical Engineering
 

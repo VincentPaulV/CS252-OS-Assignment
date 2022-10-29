@@ -6,7 +6,7 @@
 #define MAX_COUNT 500000
 float array[MAX_COUNT];
 int element_count;
-long long int i;
+int i;
 int worker_threads[3];
 
 /*  The Average, Minimum, Maximum Values: */

@@ -21,11 +21,8 @@ float maximum;
 /*  Input Function  */
 void input()
 {
-    /*printf("Enter element count: ");
-    scanf("%d",&element_count);*/
     for(i=0;i<MAX_COUNT;i++)
     {
-        //scanf("%f",&array[i]);
         array[i] = i;
     }
 }

@@ -82,17 +82,6 @@ int main(void)
     struct timezone TimeZone_Final; 
     long time_start, time_end; 
     double time_overhead;
-    /*double pi,x;
-    int i,N;
-    pi=0.0;
-    N=1000;*/
-    
-    /*#pragma omp parallel for private(x) reduction(+:pi)
-    for(i=0;i<=N;i++) 
-    {
-        x=(double)i/N;
-        pi+=4/(1+x*x); 
-    }*/
     input();
      
     int i;
@@ -102,13 +91,10 @@ int main(void)
     pthread_t t3;
     gettimeofday(&TimeValue_Start, &TimeZone_Start);
 	threads[0]=pthread_create(&t1,NULL,&thread_average,NULL);
-	//pthread_join(t1,NULL);
 	
     threads[1]=pthread_create(&t2,NULL,&thread_minimum,NULL);
-    //pthread_join(t2,NULL);
 	
     threads[2]=pthread_create(&t3,NULL,&thread_maximum,NULL);
-    //pthread_join(t3,NULL);
 
     pthread_join(t1,NULL);
     pthread_join(t2,NULL);

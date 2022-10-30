@@ -120,7 +120,7 @@ int main()
 {
    printf("I'm Vincent Paul Veernapu!\n");
    printf("Roll No. 201ME365 pursuing B.Tech at NITK majoring in Mechanical Engineering\n");
-   printf("Currently in 5th Semester as of 2022 and this is a submission for my CS252(Minor) OS Project\n");
+   printf("Currently in 5th Semester as of 2022 and this is a submission for my CS252(Minor) OS Assignment\n");
    //Thanks!
 }
 ```

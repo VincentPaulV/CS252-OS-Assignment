@@ -1,5 +1,6 @@
 # CS252-OS-Assignment
 
+   Note: Both of these programs can be run on Ubuntu 20.04 WSL on Windows
 # [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
 
 ##  Introducing System Calls

@@ -1,6 +1,6 @@
-<p align='center'>
+#**<div align='center'>
 # **CS252-OS-Assignment**
-</p>
+</div>**
 
 # [Question 1: Chapter 2 - 2.24](https://github.com/VincentPaulV/CS252-OS-Assignment/tree/main/Q1-2.24)
 

@@ -103,7 +103,12 @@ void *thread_maximum()
     printf("\nThe maximum value is %f",maximum);
 }
 ```
+The code is run by using:
+```
+gcc -o thread_time threads.c -lpthread
+```
 
+> -lpthread is very essential to run the code as without it the code won't compile
 
 ## List of Data Types & Functions involved in thread-making:
 ### **1. Data Type *pthread_t:***

@@ -114,15 +114,12 @@ As we've seen the usage of threads could prove beneficial when it comes to **Res
 - 10th edition of Operating System Concepts by Abraham Silberschatz, Peter Baer Galvin and Greg Gagne.
 
 ## Author:
-Name: Vincent Paul Veernapu
 
-Roll No.: 201ME365
-
-B.Tech 3rd Year 
-
-Mechanical Engineering
-
-National Institute of Technology Karnataka, Surathkal (NITK)
+   **Vincent Paul Veernapu**
+         **201ME365**
+    **5th Semester - B.Tech** 
+   **Mechanical Engineering**
+**National Institute of Technology Karnataka, Surathkal (NITK)**
  
 
 

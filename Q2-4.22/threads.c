@@ -1,6 +1,6 @@
 #include <stdio.h> 
 #include <stdlib.h>
-#include<pthread.h>
+#include <pthread.h>
 
 /*  Global Variables    */
 #define MAX_COUNT 500000

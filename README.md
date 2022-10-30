@@ -116,9 +116,13 @@ As we've seen the usage of threads could prove beneficial when it comes to **Res
 ## Author:
 
    **Vincent Paul Veernapu**
+   
          **201ME365**
-    **5th Semester - B.Tech** 
+         
+    **5th Semester - B.Tech**
+    
    **Mechanical Engineering**
+   
 **National Institute of Technology Karnataka, Surathkal (NITK)**
  
 

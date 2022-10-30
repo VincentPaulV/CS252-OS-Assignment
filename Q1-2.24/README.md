@@ -22,10 +22,10 @@ Ubuntu(WSL) has been used for executing the strace commands in the terminal.
 ### Description of Files: 
 1. The program that copies the contents of one file to a destination file is written in **C Language** and is named as [**copy_paste_content.c**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/copy_paste_content.c)
 2. The file whose content is copied is named [**source.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/source.txt) and the file where the content is copied to is named as [**destination.txt**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/destination.txt).
-3. The compiled C Program gives us an object file which has been named as [**output.o**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output).
+3. The compiled C Program gives us an executable file which has been named as [**output**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/output).
 
     **Command:** 
-    >*gcc -o output.o copy_paste_content.c*
+    >*gcc -o output copy_paste_content.c*
 
 ### Description of Logs:
 1. [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log) contains all the system calls made by the program during its total runtime.
@@ -100,6 +100,9 @@ printf("\nContents copied to %s", filename);
 
 
 ## List of System Calls made:
+
+The system calls are listed in the order of how they appear in [**syscall_log_count**](https://github.com/VincentPaulV/CS252-OS-Assignment/blob/main/Q1-2.24/syscall_log_count)
+
 ### 1. **read():** 
 ```
 ssize_t read(int fd, void *buf, size_t count);

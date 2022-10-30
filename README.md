@@ -113,16 +113,17 @@ As we've seen the usage of threads could prove beneficial when it comes to **Res
 - CS252(Minor) Lecture Notes by Dr. Mohit Tahiliani
 - 10th edition of Operating System Concepts by Abraham Silberschatz, Peter Baer Galvin and Greg Gagne.
 
-## Author:
+## About:
+```
+#include<stdio.h>
+int main()
+{
+   printf("I'm Vincent Paul Veernapu!\n");
+   printf("Roll No. 201ME365 pursuing B.Tech at NITK majoring in Mechanical Engineering\n");
+   printf("Currently in 5th Semester as of 2022 and this is a nsubmission for my CS252(Minor) OS Project\n");
+   //Thanks!
+}
 
-   **#include<Vincent Paul Veernapu>**
-         **201ME365**
-         
-    **5th Semester - B.Tech**
-    
-   **Mechanical Engineering**
-   
-**National Institute of Technology Karnataka, Surathkal (NITK)**
  
 
 

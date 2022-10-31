@@ -11,13 +11,13 @@ That's exactly how system calls work in the Operating Systems we use today.
 
 The task of picking up a pen can be said in any language you understand , the brain creates an impulse which your body understands and asks your hand to complete the task.
 
-The impulse that your brain sends and only your body uderstands is pretty much what a system call does in an Operating System.
+The impulse that your brain sends and only your body understands is pretty much what a system call does in an Operating System.
 
 To formally address the definition of a system call we can say that:
 
 > "System Calls are the programming interface to the services provided by the Operating System."
 
-Generally being written in C or C++ most of the System Calls are accessed by programs via a high level Application Program Interface (API) rather than directy using the system call.
+Generally being written in C or C++ most of the System Calls are accessed by programs via a high level Application Program Interface (API) rather than directly using the system call.
 
 >In the above analogy of human picking up a pen, the instruction of "picking up of a pen" said in whatsoever language which you understand is the analogy to API's as in the Operating Systems.
 
@@ -115,6 +115,7 @@ As we've seen the usage of threads could prove beneficial when it comes to **Res
 
 ## About:
 ```
+/* A Brief Intro about Me!*/
 #include<stdio.h>
 int main()
 {

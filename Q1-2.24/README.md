@@ -239,7 +239,7 @@ Line 42 of [**syscall_log**](https://github.com/VincentPaulV/CS252-OS-Assignment
 fstat(4, {st_mode=S_IFREG|0777, st_size=0, ...}) = 0
 ```
 
-In the above 6 pread64() statements:
+In the above 6 fstat() statements:
 * The fstat() function shall obtain information about an open file associated with the file descriptor fildes, and shall write it to the area pointed to by buf.
 * **int filedes** contains the file descriptor
 * struct stat *buf is a buffer pointing to a struct stat:
